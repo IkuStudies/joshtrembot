@@ -22,12 +22,12 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
-# Upload image to Twitter. Replace 'filename' your image filename.
-media_id = api.media_upload(filename="halloween.mp4").media_id_string
+# Upload video to Twitter. Replace 'filename' your video filename.
+media_id = api.media_upload(filename="halloween.mp4", media_category="tweet_video").media_id_string
 print(media_id)
 
 # Text to be Tweeted
-text = "second test, Hello World! its the leprechauns in your computer.if you can see the halloween music video the test has passed.  congrats, text and image are connected"
+text = "Hello World! leprechauns in the computer here, Here is a video I wanted to share with you as a test, spooky happy halloween music video by ikustudies."
 
 # Send Tweet with Text and media ID
 client.create_tweet(text=text, media_ids=[media_id])
